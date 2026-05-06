@@ -1,3 +1,5 @@
-UPDATE PRODUCTS
-SET OriginalPrice = OriginalPrice * 0.9
-WHERE Category = 'Electronics';
+SELECT city, SUM(total_price) AS revenue
+FROM Bookings
+WHERE status = 'COMPLETED'
+GROUP BY city
+HAVING SUM(total_price) > 0;
